@@ -20,8 +20,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     filter: grayscale(10%);
 }
 </style>
-<body style="background-color:rgb(217, 169, 120,0.7)">
-
+<body style="background-color:rgb(217, 169, 120,0.7)" onload="runEXP();expand();">
 <!-- Sidebar with image -->
 <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:35%">
   <div class="bgimg">
@@ -39,10 +38,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <i class="fa fa-remove"></i>
   </a>
   <div class="w3-bar-block w3-center">
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-    <a href="#work" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Work Experience</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav();expand();">Home</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav();runEXP();expand();">About</a>
+    <a href="#work" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav();expand();">Work Experience</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav();expand();">Contact</a>
   </div>
 </nav>
 
@@ -50,7 +49,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <div class="w3-main w3-padding-large" style="margin-left:35%">
 
   <!-- Menu icon to open sidebar -->
-  <span class="w3-button w3-top rgb(217, 169, 120,0.7) w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+  <span class="w3-button w3-top rgb(217, 169, 120,0.7) w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav();collapse();"><i class="fa fa-bars"></i></span>
 
   <!-- Header -->
   <header class="w3-container w3-center" style="padding:128px 16px" id="home">
@@ -80,18 +79,19 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
     <h3 class="w3-padding-16">My Skills</h3>
     <p class="w3-wide">Front-end Web Design</p>
+
     <div class="bldt-lightclor">
-      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:80%">80%</div>
+      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:0%" id="FEbar">0%</div>
     </div>
     
     <p class="w3-wide">Back-end Web Design</p>
     <div class="bldt-lightclor">
-      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:50%">50%</div>
+      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:0%" id="BEbar">0%</div>
     </div>
     
     <p class="w3-wide">Software (C#, .Net, Android-Java)</p>
     <div class="bldt-lightclor">
-      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:85%">85%</div>
+      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:0%" id="SWbar">0%</div>
     </div><br>
 
     <a href="Img/desk.jpg" download>
@@ -111,21 +111,21 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <div class="timeline">
       
       <div class="container right">
-        <div class="content">
+        <div class="content" id="eXPbar3">
           <h2>2016</h2>
           <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
         </div>
       </div>
       
       <div class="container right">
-        <div class="content">
+        <div class="content" id="eXPbar2">
           <h2>2012</h2>
           <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
         </div>
       </div>
       
       <div class="container right">
-        <div class="content">
+        <div class="content" id="eXPbar1">
           <h2>2007</h2>
           <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
         </div>
@@ -150,7 +150,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     </div>
 
    <br>
-    
       
         <a href="https://mail.google.com/mail/u/1/#inbox?compose=new" target="_blank" class="w3-hover-text-green"><button class="w3-button bldt-lightbtnclor w3-padding-large" type="submit">
           <i class="fa fa-envelope w3-margin-right"> </i> SEND EMAIL 
@@ -159,9 +158,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
         <a href="https://www.facebook.com/messages/t/bldthinh" target="_blank" class="w3-hover-text-green"><button class="w3-button bldt-lightbtnclor w3-padding-large" type="submit">
           <i class="fa fa-facebook-official w3-margin-right"> </i>SEND MESSAGE
         </button></a>
-        
-    
-    
     
   <!-- End Contact Section -->
   </div>  
@@ -176,8 +172,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </div>
 
 <script>
-
-
+var 
+  hEXPB1=document.getElementById("eXPbar1").scrollHeight + "px",
+  hEXPB2=document.getElementById("eXPbar2").scrollHeight + "px",
+  hEXPB3=document.getElementById("eXPbar3").scrollHeight + "px";
 // Open and close sidebar
 function openNav() {
     document.getElementById("mySidebar").style.width = "65%";
@@ -186,6 +184,59 @@ function openNav() {
 
 function closeNav() {
     document.getElementById("mySidebar").style.display = "none";
+}
+
+function collapse(){
+  document.getElementById("eXPbar3").style.maxHeight=document.getElementById("eXPbar2").style.maxHeight=document.getElementById("eXPbar1").style.maxHeight=0;
+}
+function expand(){
+  document.getElementById("eXPbar1").style.transitionDelay="0.2s";
+  document.getElementById("eXPbar1").style.maxHeight = hEXPB1;
+  document.getElementById("eXPbar2").style.transitionDelay="0.6s";
+  document.getElementById("eXPbar2").style.maxHeight = hEXPB2;
+  document.getElementById("eXPbar3").style.transitionDelay="1s";
+  document.getElementById("eXPbar3").style.maxHeight = hEXPB3;
+}
+
+
+function runEXP() {
+  var febar = document.getElementById("FEbar");
+  var widthFE = 1;
+  var idFE = setInterval(frame, 20);
+
+  var bebar = document.getElementById("BEbar");
+  var widthBE = 1;
+  var idBE = setInterval(frame, 20);
+
+  var swbar = document.getElementById("SWbar");
+  var widthSW = 1;
+  var idSW = setInterval(frame, 20);
+
+  function frame() {
+    if (widthFE >= 80) {
+      clearInterval(idFE);
+    } else {
+      widthFE++; 
+      febar.style.width = widthFE + '%'; 
+      febar.innerHTML = widthFE * 1  + '%';
+    }
+
+    if (widthBE >= 50) {
+      clearInterval(idBE);
+    } else {
+      widthBE++; 
+      bebar.style.width = widthBE + '%';
+      bebar.innerHTML = widthBE * 1  + '%';
+    }
+
+    if (widthSW >= 85) {
+      clearInterval(idSW);
+    } else {
+      widthSW++; 
+      swbar.style.width = widthSW + '%'; 
+      swbar.innerHTML = widthSW * 1  + '%';
+    }
+  }
 }
 </script>
 
