@@ -20,7 +20,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     filter: grayscale(10%);
 }
 </style>
-<body style="background-color:rgb(217, 169, 120,0.7)" onload="runEXP();expand();">
+<body style="background-color:rgb(217, 169, 120,0.7)" onload="runEXP();closeNav();">
 <!-- Sidebar with image -->
 <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:35%">
   <div class="bgimg">
@@ -38,10 +38,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <i class="fa fa-remove"></i>
   </a>
   <div class="w3-bar-block w3-center">
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav();expand();">Home</a>
-    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav();runEXP();expand();">About</a>
-    <a href="#work" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav();expand();">Work Experience</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav();expand();">Contact</a>
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav();runEXP()">About</a>
+    <a href="#work" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav();">Work Experience</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
   </div>
 </nav>
 
@@ -49,7 +49,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <div class="w3-main w3-padding-large" style="margin-left:35%">
 
   <!-- Menu icon to open sidebar -->
-  <span class="w3-button w3-top rgb(217, 169, 120,0.7) w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav();collapse();"><i class="fa fa-bars"></i></span>
+  <span class="w3-button w3-top rgb(217, 169, 120,0.7) w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav();"><i class="fa fa-bars"></i></span>
 
   <!-- Header -->
   <header class="w3-container w3-center" style="padding:128px 16px" id="home">
@@ -180,24 +180,20 @@ var
 function openNav() {
     document.getElementById("mySidebar").style.width = "65%";
     document.getElementById("mySidebar").style.display = "block";
+
+    document.getElementById("eXPbar3").style.maxHeight=document.getElementById("eXPbar2").style.maxHeight=document.getElementById("eXPbar1").style.maxHeight=0;
 }
 
 function closeNav() {
     document.getElementById("mySidebar").style.display = "none";
-}
 
-function collapse(){
-  document.getElementById("eXPbar3").style.maxHeight=document.getElementById("eXPbar2").style.maxHeight=document.getElementById("eXPbar1").style.maxHeight=0;
+    document.getElementById("eXPbar1").style.transitionDelay="0.2s";
+    document.getElementById("eXPbar1").style.maxHeight = hEXPB1;
+    document.getElementById("eXPbar2").style.transitionDelay="0.6s";
+    document.getElementById("eXPbar2").style.maxHeight = hEXPB2;
+    document.getElementById("eXPbar3").style.transitionDelay="1s";
+    document.getElementById("eXPbar3").style.maxHeight = hEXPB3;
 }
-function expand(){
-  document.getElementById("eXPbar1").style.transitionDelay="0.2s";
-  document.getElementById("eXPbar1").style.maxHeight = hEXPB1;
-  document.getElementById("eXPbar2").style.transitionDelay="0.6s";
-  document.getElementById("eXPbar2").style.maxHeight = hEXPB2;
-  document.getElementById("eXPbar3").style.transitionDelay="1s";
-  document.getElementById("eXPbar3").style.maxHeight = hEXPB3;
-}
-
 
 function runEXP() {
   var febar = document.getElementById("FEbar");
