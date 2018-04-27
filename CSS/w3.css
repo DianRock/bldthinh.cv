@@ -353,10 +353,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px -30px}
     background-color: white;
     position: relative;
     border-radius: 6px;
-
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -371,7 +367,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px -30px}
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
-
 
   }
   

@@ -20,13 +20,13 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     filter: grayscale(10%);
 }
 </style>
-<body style="background-color:rgb(217, 169, 120,0.7)" onload="runEXP();closeNav();">
+<body style="background-color:rgb(217, 169, 120,0.7)">
 <!-- Sidebar with image -->
 <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:35%">
   <div class="bgimg">
     <div class="overlay">
       <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Vung Tau, Vietnam</p>
-      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +84 164 8663 863</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +84 123 456 789</p>
       <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: bld.thinh@mail.com</p>
     </div>
   </div>
@@ -81,17 +81,17 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <p class="w3-wide">Front-end Web Design</p>
 
     <div class="bldt-lightclor">
-      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:0%" id="FEbar">0%</div>
+      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:80%" id="FEbar">80%</div>
     </div>
     
     <p class="w3-wide">Back-end Web Design</p>
     <div class="bldt-lightclor">
-      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:0%" id="BEbar">0%</div>
+      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:50%" id="BEbar">50%</div>
     </div>
     
     <p class="w3-wide">Software (C#, .Net, Android-Java)</p>
     <div class="bldt-lightclor">
-      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:0%" id="SWbar">0%</div>
+      <div class="w3-container w3-center w3-padding-small bldt-darkclor" style="width:85%" id="SWbar">85%</div>
     </div><br>
 
     <a href="Img/desk.jpg" download>
@@ -171,70 +171,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <!-- END PAGE CONTENT -->
 </div>
 
-<script>
-var 
-  hEXPB1=document.getElementById("eXPbar1").scrollHeight + "px",
-  hEXPB2=document.getElementById("eXPbar2").scrollHeight + "px",
-  hEXPB3=document.getElementById("eXPbar3").scrollHeight + "px";
-// Open and close sidebar
-function openNav() {
-    document.getElementById("mySidebar").style.width = "65%";
-    document.getElementById("mySidebar").style.display = "block";
-
-    document.getElementById("eXPbar3").style.maxHeight=document.getElementById("eXPbar2").style.maxHeight=document.getElementById("eXPbar1").style.maxHeight=0;
-}
-
-function closeNav() {
-    document.getElementById("mySidebar").style.display = "none";
-
-    document.getElementById("eXPbar1").style.transitionDelay="0.2s";
-    document.getElementById("eXPbar1").style.maxHeight = hEXPB1;
-    document.getElementById("eXPbar2").style.transitionDelay="0.6s";
-    document.getElementById("eXPbar2").style.maxHeight = hEXPB2;
-    document.getElementById("eXPbar3").style.transitionDelay="1s";
-    document.getElementById("eXPbar3").style.maxHeight = hEXPB3;
-}
-
-function runEXP() {
-  var febar = document.getElementById("FEbar");
-  var widthFE = 1;
-  var idFE = setInterval(frame, 20);
-
-  var bebar = document.getElementById("BEbar");
-  var widthBE = 1;
-  var idBE = setInterval(frame, 20);
-
-  var swbar = document.getElementById("SWbar");
-  var widthSW = 1;
-  var idSW = setInterval(frame, 20);
-
-  function frame() {
-    if (widthFE >= 80) {
-      clearInterval(idFE);
-    } else {
-      widthFE++; 
-      febar.style.width = widthFE + '%'; 
-      febar.innerHTML = widthFE * 1  + '%';
-    }
-
-    if (widthBE >= 50) {
-      clearInterval(idBE);
-    } else {
-      widthBE++; 
-      bebar.style.width = widthBE + '%';
-      bebar.innerHTML = widthBE * 1  + '%';
-    }
-
-    if (widthSW >= 85) {
-      clearInterval(idSW);
-    } else {
-      widthSW++; 
-      swbar.style.width = widthSW + '%'; 
-      swbar.innerHTML = widthSW * 1  + '%';
-    }
-  }
-}
-</script>
+<script src="js/index.js"></script>
 
 </body>
 </html>
